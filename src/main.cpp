@@ -3,10 +3,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <limits>
 #include <io2d.h>
 #include "route_model.h"
 #include "render.h"
 #include "route_planner.h"
+
 
 using namespace std::experimental;
 
@@ -51,16 +53,44 @@ int main(int argc, const char **argv)
         else
             osm_data = std::move(*data);
     }
-    
+   
+    // DONE: 6-21-21
     // TODO 1: Declare floats `start_x`, `start_y`, `end_x`, and `end_y` and get
     // user input for these values using std::cin. Pass the user input to the
     // RoutePlanner object below in place of 10, 10, 90, 90.
+    
+    // User input data
+    std::vector<std::string> endpoint_names {"start_x", "start_y", "end_x", "end_y"}; 
+    std::vector<float> endpoint_values; 
+    float input; 
+
+    // User input loop over variables
+    for (auto item : endpoint_names){
+        while(true){
+            std::cout << item << ": ";
+            if(std::cin >> input){
+                endpoint_values.push_back(input);
+                break; 
+            } else {
+                std::cout << "input must be a float" << "\n";
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');         
+            }
+        }
+    }
+
+    // Assign user checked values to variables
+    float start_x = endpoint_values[0];
+    float start_y = endpoint_values[1];
+    float end_x = endpoint_values[2];
+    float end_y = endpoint_values[3];
+   
 
     // Build Model.
     RouteModel model{osm_data};
 
     // Create RoutePlanner object and perform A* search.
-    RoutePlanner route_planner{model, 10, 10, 90, 90};
+    RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
     route_planner.AStarSearch();
 
     std::cout << "Distance: " << route_planner.GetDistance() << " meters. \n";
