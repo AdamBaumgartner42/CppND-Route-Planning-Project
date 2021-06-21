@@ -27,8 +27,28 @@ git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-subm
   * Mac: same instructions as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 * IO2D
-  * Installation instructions for all operating systems can be found [here](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md)
-  * This library must be built in a place where CMake `find_package` will be able to find it
+  * Linux
+### Cairo/Xlib on Linux
+CMake script expects cairo and graphicsmagick to be installed. libpng is required in order to run tests.
+These installation steps assume APT package manager on Ubuntu Linux.
+Installation steps:
+1. Refresh apt: `sudo apt update`
+2. Install GCC: `sudo apt install build-essential`
+3. Install CMake: `sudo apt install cmake`
+4. Install Cairo: `sudo apt install libcairo2-dev`
+5. Install graphicsmagick: `sudo apt install libgraphicsmagick1-dev`
+6. Install libpng: `sudo apt install libpng-dev`
+
+Example of CMake execution:
+```
+git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
+cd P0267_RefImpl
+mkdir Debug
+cd Debug
+cmake --config Debug "-DCMAKE_BUILD_TYPE=Debug" ..
+cmake --build .
+```
+  
 
 ## Compiling and Running
 
