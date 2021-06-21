@@ -27,7 +27,7 @@ git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-subm
   * Mac: same instructions as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 * IO2D 
-  * Cairo/Xlib on Linux
+  * Cairo/Xlib on Linux (Ubuntu 20.04.2 LTS)
   
 CMake script expects cairo and graphicsmagick to be installed. libpng is required in order to run tests.
 These installation steps assume APT package manager on Ubuntu Linux.
@@ -47,6 +47,7 @@ mkdir Debug
 cd Debug
 cmake --config Debug "-DCMAKE_BUILD_TYPE=Debug" ..
 cmake --build .
+sudo make install
 ```
   
 
