@@ -28,6 +28,7 @@ git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-subm
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 * IO2D 
   * Cairo/Xlib on Linux
+  
 CMake script expects cairo and graphicsmagick to be installed. libpng is required in order to run tests.
 These installation steps assume APT package manager on Ubuntu Linux.
 Installation steps:
