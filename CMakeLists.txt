@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.11.3)
+# Adam Baumgartner, 6/20/21
 
 # Set the C++ standard we will use
 set(CMAKE_CXX_STANDARD 17)
