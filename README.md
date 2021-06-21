@@ -26,9 +26,8 @@ git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-subm
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same instructions as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
-* IO2D
-  * Linux
-### Cairo/Xlib on Linux
+* IO2D 
+  * Cairo/Xlib on Linux
 CMake script expects cairo and graphicsmagick to be installed. libpng is required in order to run tests.
 These installation steps assume APT package manager on Ubuntu Linux.
 Installation steps:
