@@ -1,0 +1,24 @@
+TODO 4:
+Complete the AddNeighboors method to expand the current node by adding all unvisited neighboors to the open list. 
+
+Tips: 
+*1*Use the FindNeighboors() method of the current_node to populate current_node.neighboors vector with all the neighboors. 
+
+
+void FindNeighbors();
+
+// Confusing b/c this is void method. 
+// What is it updating. Probably a memory location.
+
+current_node.FindNeighboors();
+
+Q: Does it add them to the "Open List"?
+Q: What is the Open List?
+route_planner.h
+-> open_list 
+
+
+*2* For each node in current_node.neighboors, set the parent, the h value and the g value
+
+Q: Is this a vector of a data type which holds 1.parent, 2.h_value, 3.g_value
+A: Vector of type Node, 1,2,3 are all public variables

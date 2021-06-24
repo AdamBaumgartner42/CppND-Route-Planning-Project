@@ -30,10 +30,6 @@ float RoutePlanner::CalculateHValue(RouteModel::Node const *node){
 }
 
 
-
-
-
-
 // TODO 4: Complete the AddNeighbors method to expand the current node by adding all unvisited neighbors to the open list.
 // Tips:
 // - Use the FindNeighbors() method of the current_node to populate current_node.neighbors vector with all the neighbors.
